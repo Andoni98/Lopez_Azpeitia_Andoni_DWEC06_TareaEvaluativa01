@@ -1,0 +1,29 @@
+.footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+.footer a {
+  color: #f39c12;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #e67e22;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.footer-links {
+  margin-top: 10px;
+}

@@ -1,0 +1,60 @@
+<p class="peliculas-titulo">Películas:</p>
+<ul class="peliculas-lista">
+  @for (pelicula of peliculaService.peliculas; track $index) {
+    <li class="pelicula-item">
+      <div class="pelicula-info">
+        <h2 class="pelicula-index">{{$index + 1}}</h2>
+        <h2 class="pelicula-titulo">{{pelicula.titulo}}</h2>
+        <h2 class="pelicula-anio">{{pelicula.anio}}</h2>
+        <h2 class="pelicula-director">{{pelicula.director}}</h2>
+        <button (click)="editarPelicula(pelicula)" class="btn-editar">✏️</button>
+        <button (click)="deletePelicula(pelicula.id)" class="btn-eliminar">🗑️</button>
+      </div>
+
+      <!-- Mostrar formulario si está en edición -->
+      <div *ngIf="peliculaEnEdicion?.id === pelicula.id" class="form-edicion">
+         <form #form="ngForm" (ngSubmit)="actualizarPelicula()" novalidate>
+
+    <input
+      [(ngModel)]="peliculaEnEdicion.titulo"
+      name="titulo"
+      required
+      minlength="2"
+      placeholder="Título"
+      #titulo="ngModel"
+    />
+    <div *ngIf="titulo.invalid && titulo.touched" class="error">
+      El título es obligatorio.
+    </div>
+
+    <input
+      [(ngModel)]="peliculaEnEdicion.anio"
+      name="anio"
+      required
+      pattern="^[0-9]{4}$"
+      placeholder="Año"
+      #anio="ngModel"
+    />
+    <div *ngIf="anio.invalid && anio.touched" class="error">
+      Año requerido (4 dígitos).
+    </div>
+
+    <input
+      [(ngModel)]="peliculaEnEdicion.director"
+      name="director"
+      required
+      minlength="2"
+      placeholder="Director"
+      #director="ngModel"
+    />
+    <div *ngIf="director.invalid && director.touched" class="error">
+      El director es obligatorio.
+    </div>
+
+    <button [disabled]="form.invalid">Actualizar</button>
+  </form>
+  </div>
+  </li>
+  }
+</ul>
+

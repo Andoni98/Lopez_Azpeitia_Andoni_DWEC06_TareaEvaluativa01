@@ -1,0 +1,86 @@
+.peliculas-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+.peliculas-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pelicula-item {
+  background-color: #f4f4f4;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pelicula-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pelicula-index {
+  font-size: 18px;
+  color: #3498db;
+}
+
+.pelicula-titulo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.pelicula-anio,
+.pelicula-director {
+  font-size: 16px;
+  color: #636e72;
+}
+
+.btn-eliminar {
+  background-color: #ff4d4f;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 12px;
+}
+
+.btn-eliminar:hover {
+  background-color: #d9363e;
+}
+
+
+.form-edicion {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-edicion input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-edicion button {
+  padding: 6px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}

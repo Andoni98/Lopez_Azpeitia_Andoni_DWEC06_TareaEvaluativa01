@@ -1,0 +1,32 @@
+<form [formGroup]="peliculaForm" (submit)="handleSubmit()">
+  <h2>Agregar Película Favorita</h2>
+
+
+    <fieldset>
+      <label for="titulo-pelicula">Título:</label>
+      <input type="text" id="titulo-pelicula" formControlName="titulo">
+      @if (titulo.invalid && titulo.touched){
+        <p class="form-error">El titulo es necesario</p>
+      }
+    </fieldset>
+    <fieldset>
+      <label for="anio-pelicula">Año:</label>
+      <input type="text" id="anio-pelicula" formControlName="anio">
+      @if (anio.hasError("required")&& anio.touched){
+        <p class="form-error">El año es necesario</p>
+      } @else if (anio.hasError("pattern")&& anio.touched) {
+        <p class="form-error">El año debe ser de 4 cifras</p>
+      } @else if (anio.hasError("max")&& anio.touched) {
+        <p class="form-error">El año debe ser igual o menor que el año actual</p>
+      } 
+    </fieldset>
+    <fieldset>
+      <label for="director-pelicula">Director:</label>
+      <input type="text" id="director-pelicula" formControlName="director">
+      @if (director.hasError("required")&& director.touched){
+        <p class="form-error">El director es necesario</p>
+      }
+    </fieldset>
+<button [disabled]="peliculaForm.invalid" (click)="postPelicula()">Guardar Película</button>
+</form>
+
